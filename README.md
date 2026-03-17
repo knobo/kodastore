@@ -1,5 +1,9 @@
 # KodaStore
 
+[![CI](https://github.com/knobo/kodastore/actions/workflows/ci.yml/badge.svg)](https://github.com/knobo/kodastore/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Discord](https://img.shields.io/discord/1234567890?label=Discord&logo=discord&logoColor=white)](https://discord.gg/CVX5e8cZKN)
+
 **An open-source Event Sourcing database built on PostgreSQL.**
 
 KodaStore gives you the power of a dedicated event store with the operational simplicity of Postgres. Store events, rebuild state, and stream changes — using the database you already know and trust.
@@ -181,9 +185,17 @@ The history of open source shows that the best tools aren't the ones that fit on
 
 If you're thinking about building your own event store — consider contributing to this one instead. Your use case probably isn't as unique as it feels, and together we can build something none of us could alone.
 
+## Community
+
+- **Discord:** [Join us on Discord](https://discord.gg/CVX5e8cZKN) — ask questions, share ideas, or just say hello
+- **Issues:** [GitHub Issues](https://github.com/knobo/kodastore/issues) for bug reports and feature requests
+- **Discussions:** Open an issue to discuss ideas before starting large changes
+
 ## Contributing
 
-We welcome contributions of all kinds. Some areas where help is especially valuable:
+We welcome contributions of all kinds! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
+
+Some areas where help is especially valuable:
 
 - **gRPC API** — high-performance streaming interface alongside REST
 - **Subscription engine** — real-time event streaming using PostgreSQL logical replication
@@ -192,8 +204,6 @@ We welcome contributions of all kinds. Some areas where help is especially valua
 - **Projections** — built-in read model support with transactional guarantees
 - **Performance testing** — benchmarks, load tests, optimization
 - **Documentation** — guides, tutorials, architectural decision records
-
-Open an issue to discuss your idea before starting large changes.
 
 ## License
 
