@@ -193,7 +193,9 @@ If you're thinking about building your own event store — consider contributing
 
 ## Contributing
 
-We welcome contributions of all kinds! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
+The best way to start contributing is to **install KodaStore, try it out, and tell us what you think.** Open issues for bugs, ideas, or anything that feels harder than it should be. A good issue is worth just as much as a pull request.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 
 Some areas where help is especially valuable:
 

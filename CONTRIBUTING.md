@@ -1,8 +1,20 @@
 # Contributing to KodaStore
 
-Thank you for your interest in contributing to KodaStore! This guide will help you get started.
+Thank you for your interest in contributing to KodaStore! Every contribution matters — whether it's code, a bug report, or a question that helps us improve the documentation.
 
-## Getting Started
+## The Best Way to Start
+
+You don't need to write code to make a valuable contribution. Here's how to get involved:
+
+1. **Install and try it.** Run KodaStore locally, build something with it, and see how it feels. First-hand experience is the foundation of every good contribution.
+
+2. **Open issues.** Found something confusing? Hit a rough edge? Have an idea for how something could work better? Open an issue. The best features and fixes come from people actually using the software. A well-written bug report or feature request is just as valuable as a pull request.
+
+3. **Join the conversation.** Drop by [Discord](https://discord.gg/CVX5e8cZKN) and tell us what you're building, ask questions, or share feedback. Every perspective helps shape the project.
+
+This is an early-stage project — your input right now has an outsized impact on where it goes.
+
+## Submitting Code
 
 1. Fork the repository
 2. Clone your fork: `git clone git@github.com:YOUR_USERNAME/kodastore.git`
