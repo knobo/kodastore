@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: kodastore-postgres
+    environment:
+      POSTGRES_DB: kodastore
+      POSTGRES_USER: kodastore
+      POSTGRES_PASSWORD: kodastore
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgresql.conf:/etc/postgresql/postgresql.conf
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kodastore"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
