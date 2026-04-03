@@ -14,7 +14,9 @@ class EventController(
     private val appendEventsUseCase: AppendEventsUseCase,
     private val readStreamUseCase: ReadStreamUseCase,
     private val readAllEventsUseCase: ReadAllEventsUseCase,
-    private val readCategoryUseCase: ReadCategoryUseCase
+    private val readCategoryUseCase: ReadCategoryUseCase,
+    private val countCategoryUseCase: CountCategoryUseCase,
+    private val streamExistsUseCase: StreamExistsUseCase
 ) {
 
     @PostMapping("/streams/{streamId}/events")
@@ -56,6 +58,20 @@ class EventController(
         @RequestParam(defaultValue = "1000") limit: Int
     ): List<RecordedEventResponse> {
         return readCategoryUseCase.execute(category, fromOffset, limit).map { it.toResponse() }
+    }
+
+    @GetMapping("/categories/{category}/count")
+    fun countCategory(@PathVariable category: String): Map<String, Long> {
+        return mapOf("count" to countCategoryUseCase.execute(category))
+    }
+
+    @RequestMapping(method = [RequestMethod.HEAD], path = ["/streams/{streamId}"])
+    fun streamExists(@PathVariable streamId: String): ResponseEntity<Void> {
+        return if (streamExistsUseCase.execute(streamId)) {
+            ResponseEntity.ok().build()
+        } else {
+            ResponseEntity.notFound().build()
+        }
     }
 }
 

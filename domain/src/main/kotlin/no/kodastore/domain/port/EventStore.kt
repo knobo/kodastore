@@ -25,4 +25,8 @@ interface EventStore {
         fromOffset: GlobalOffset = GlobalOffset.START,
         limit: Int = 1000
     ): List<RecordedEvent>
+
+    fun countCategory(category: String): Long
+
+    fun streamExists(streamId: StreamId): Boolean
 }

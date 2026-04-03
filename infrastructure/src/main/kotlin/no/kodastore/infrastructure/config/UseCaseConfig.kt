@@ -19,4 +19,10 @@ class UseCaseConfig {
 
     @Bean
     fun readCategoryUseCase(eventStore: EventStore) = ReadCategoryUseCase(eventStore)
+
+    @Bean
+    fun countCategoryUseCase(eventStore: EventStore) = CountCategoryUseCase(eventStore)
+
+    @Bean
+    fun streamExistsUseCase(eventStore: EventStore) = StreamExistsUseCase(eventStore)
 }

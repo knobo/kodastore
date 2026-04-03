@@ -134,6 +134,22 @@ class PostgresEventStore(
         )
     }
 
+    override fun countCategory(category: String): Long {
+        return jdbc.queryForObject(
+            "SELECT COUNT(*) FROM events WHERE stream_id LIKE ? || '-%'",
+            Long::class.java,
+            category
+        )!!
+    }
+
+    override fun streamExists(streamId: StreamId): Boolean {
+        return jdbc.queryForObject(
+            "SELECT EXISTS(SELECT 1 FROM events WHERE stream_id = ? LIMIT 1)",
+            Boolean::class.java,
+            streamId.value
+        )!!
+    }
+
     private fun getCurrentVersion(streamId: StreamId): StreamVersion? {
         val version = jdbc.queryForObject(
             "SELECT MAX(stream_version) FROM events WHERE stream_id = ?",
