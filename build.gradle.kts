@@ -14,6 +14,11 @@ allprojects {
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
+    // CVE patches newer than the Spring Boot 3.5.16 BOM; delete each line once the BOM catches up.
+    extra["tomcat.version"] = "10.1.62"
+    extra["jackson-bom.version"] = "2.21.8"
+    extra["postgresql.version"] = "42.7.15"
+
     configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
         jvmToolchain(21)
         compilerOptions {
